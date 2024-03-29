@@ -1,0 +1,135 @@
+{
+  "metainfo" : {
+    "type" : "Prophecy",
+    "fabricId" : "9770",
+    "jobId" : "jobs/run_2_Airflow",
+    "name" : "run_2_Airflow",
+    "dagName" : "gYwxvB9DTbTjQwMwd49ceA_",
+    "schedule" : "0 0 * * 1",
+    "enabled" : false,
+    "alerting" : {
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "ignore_first_depends_on_past" : true,
+      "pool" : "P1Mfmhdo",
+      "do_xcom_push" : true
+    },
+    "availableFabrics" : [ {
+      "id" : "9770",
+      "name" : "Airflow",
+      "trialStartDate" : 1708458382170
+    } ],
+    "endDate" : "2024-03-12",
+    "catchup" : true,
+    "scheduleTimeZone" : "UTC",
+    "dagParams" : {
+      "instances" : {
+        "default" : { }
+      },
+      "params" : { },
+      "selected" : "default"
+    },
+    "airflowFunctions" : [ ],
+    "dynamicPipelineStatus" : {
+      "databricks" : false,
+      "dataproc" : false,
+      "emr" : false
+    }
+  },
+  "processes" : {
+    "7wk4RrkeV5SK8pC2pEmqO$$kyn7avJ-59HZq89jGExm6" : {
+      "id" : "7wk4RrkeV5SK8pC2pEmqO$$kyn7avJ-59HZq89jGExm6",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "customers_orders",
+        "slug" : "customers_orders",
+        "x" : -280,
+        "y" : -80
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "5vOfaN8iEpAnnSN44hQaM$$zR2PFIoFkRKYEM1U_ta2j",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "EIT-OqIshLA1ZXd6CBkHl$$BCGHx2pT4vwUDQgtxBHH4",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "runJson" : null,
+        "databricksConnId" : "",
+        "clusterSize" : "9631/small",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : {
+            "HelloWorld" : [ "default" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        },
+        "taskId" : null,
+        "pipelineId" : {
+          "type" : "literal",
+          "value" : "pipelines/customers_orders"
+        }
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "Xy52SakL6uvkYB4GwShMG$$CnPfcG1P3EyiVT4o3th4F" : {
+      "id" : "Xy52SakL6uvkYB4GwShMG$$CnPfcG1P3EyiVT4o3th4F",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "report_top_customers",
+        "slug" : "report_top_customers",
+        "x" : -100,
+        "y" : -80
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "zUoyWjFelVDKo_Y5Q6Rq_$$hiplG7Malzv19c2qEh57c",
+          "slug" : "customers_orders"
+        } ],
+        "outputs" : [ {
+          "id" : "odmnXppPF8r27_4MRxMD7$$6mgIPyhblBlxf6WR8rS_P",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "runJson" : null,
+        "databricksConnId" : "",
+        "clusterSize" : "9631/small",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : {
+            "HelloWorld" : [ "default" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        },
+        "taskId" : null,
+        "pipelineId" : {
+          "type" : "literal",
+          "value" : "pipelines/report_top_customers"
+        }
+      },
+      "connections" : [ ],
+      "processes" : { }
+    }
+  },
+  "connections" : [ {
+    "id" : "gzOJ0qwk9foEPeXr_wyb4$$LVA3nKgww8QxQtmv8WsqU",
+    "source" : "7wk4RrkeV5SK8pC2pEmqO$$kyn7avJ-59HZq89jGExm6",
+    "target" : "Xy52SakL6uvkYB4GwShMG$$CnPfcG1P3EyiVT4o3th4F",
+    "sourcePort" : "EIT-OqIshLA1ZXd6CBkHl$$BCGHx2pT4vwUDQgtxBHH4",
+    "targetPort" : "zUoyWjFelVDKo_Y5Q6Rq_$$hiplG7Malzv19c2qEh57c"
+  } ]
+}

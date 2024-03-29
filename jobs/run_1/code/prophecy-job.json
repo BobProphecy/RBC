@@ -1,0 +1,149 @@
+{
+  "metainfo" : {
+    "type" : "Databricks",
+    "fabricId" : "9631",
+    "jobId" : "jobs/run_1",
+    "name" : "run_1",
+    "schedule" : "0 0 0 ? * 1 *",
+    "scheduleTimeZone" : "UTC",
+    "jobClusterMode" : {
+      "clusterMode" : "Single"
+    },
+    "enabled" : false,
+    "defaultClusterSize" : "small",
+    "alerting" : {
+      "emails" : "bobw@prophecy.io",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "type" : "Inherited",
+      "retries" : 0,
+      "alerting" : {
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false
+      }
+    },
+    "availableFabrics" : [ {
+      "id" : "9631",
+      "name" : "Databricks-Prophecy",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "9851",
+      "name" : "workshop-fabric",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    } ],
+    "accessControlList" : [ ]
+  },
+  "processes" : {
+    "UtG15jxl01uZjz45s2e2I$$ut4uDvFYIil9dWuOiKrZ0" : {
+      "id" : "UtG15jxl01uZjz45s2e2I$$ut4uDvFYIil9dWuOiKrZ0",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "customers_orders",
+        "slug" : "customers_orders",
+        "x" : -280,
+        "y" : -100
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "WwnlcN_PRbo-z2SNVKOYo$$oYwCT2ZZaflXW9axwoPXQ",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "nlQzVhP_yOmHv1q8VvXGi$$-S_z0pNMXxTiDHq59wqWJ",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/customers_orders",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : {
+            "HelloWorld" : [ "default" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    },
+    "heKF0CvYzYFYbqYYOAM2Z$$S9tuDPgDmxxnasneraxzn" : {
+      "id" : "heKF0CvYzYFYbqYYOAM2Z$$S9tuDPgDmxxnasneraxzn",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "report_top_customers",
+        "slug" : "report_top_customers",
+        "x" : -40,
+        "y" : -100
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "SF0TN4hyOwVLoScrrCjvt$$9jT6N7q1quiUNtuGe2auE",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "PK888WafXE2bsjQKQwJfx$$Xpe05eKcI0VJzYwJ0EFr-",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/report_top_customers",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : {
+            "HelloWorld" : [ "default" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "3cEQdwBEnQ5TTOMS58QEX$$xpNG-ZFw2De_mJvEZ0wfj",
+    "source" : "UtG15jxl01uZjz45s2e2I$$ut4uDvFYIil9dWuOiKrZ0",
+    "target" : "heKF0CvYzYFYbqYYOAM2Z$$S9tuDPgDmxxnasneraxzn",
+    "sourcePort" : "nlQzVhP_yOmHv1q8VvXGi$$-S_z0pNMXxTiDHq59wqWJ",
+    "targetPort" : "SF0TN4hyOwVLoScrrCjvt$$9jT6N7q1quiUNtuGe2auE"
+  } ]
+}

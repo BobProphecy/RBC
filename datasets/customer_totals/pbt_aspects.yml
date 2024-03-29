@@ -1,0 +1,28 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: full_name
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: amount
+    type: long
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: customer_id
+    type: integer
+    nullable: true
+    metadata:
+      description: A unique identifier assigned to each customer in the dataset. It
+        stores numerical values in integer data type and serves as a primary key for
+        the customers table. This column is used to uniquely identify each customer
+        and link their orders and other related data.
+      mappings: []
+      tags: []

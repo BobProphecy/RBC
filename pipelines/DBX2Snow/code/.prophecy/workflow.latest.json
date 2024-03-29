@@ -1,0 +1,812 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1"
+    },
+    "codeGenConfiguration" : {
+      "editableConfig" : true
+    },
+    "id" : "1",
+    "uri" : "pipelines/DBX2Snow",
+    "language" : "python",
+    "fabricId" : "9631",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "bobwprophecyioteam.helloworld.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.spark_basic.functions", "prophecy.warehouse.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "12654",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12655",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "dbx2snow",
+    "configurationVersion" : "v1"
+  },
+  "connections" : [ {
+    "id" : "dcDukkTF",
+    "source" : "DlvaFCGY",
+    "sourcePort" : "qsJqg0xp",
+    "target" : "l9m7QWaE",
+    "targetPort" : "wiiIccaJ"
+  }, {
+    "id" : "U2C1jLv2",
+    "source" : "qE2Q061c",
+    "sourcePort" : "a6N16Ukw",
+    "target" : "QxOA3ndZ",
+    "targetPort" : "r3GqYK6o"
+  }, {
+    "id" : "zgBGa7WN",
+    "source" : "s75mv1gA",
+    "sourcePort" : "LAWuzVhU",
+    "target" : "DlvaFCGY",
+    "targetPort" : "j9OMQ87r"
+  }, {
+    "id" : "mc7XQ5c4",
+    "source" : "l9m7QWaE",
+    "sourcePort" : "fz9UnRF4",
+    "target" : "qE2Q061c",
+    "targetPort" : "dLKpgp56"
+  }, {
+    "id" : "rvAkZHxD",
+    "source" : "knVHdJW2",
+    "sourcePort" : "qfvSWWEv",
+    "target" : "DlvaFCGY",
+    "targetPort" : "cpUfqcwj"
+  }, {
+    "id" : "MzBMAyjcUlOZqH5RtT6rV$$bgHjL9oD-gsAtJrwrlftj",
+    "source" : "QxOA3ndZ",
+    "sourcePort" : "mPXLz3By",
+    "target" : "_nm6r2-lAET8GNjXLX0Pl$$UPcumLGVTU0S1bk1lPvoE",
+    "targetPort" : "jmJL-xXY7Y1uVlbNNGqRq$$HQNLP56cQvriRKSjJbBMl"
+  } ],
+  "processes" : {
+    "QxOA3ndZ" : {
+      "id" : "QxOA3ndZ",
+      "component" : "Limit",
+      "metadata" : {
+        "label" : "limit_50",
+        "slug" : "limit_50",
+        "x" : 820,
+        "y" : 120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "This gem limits the output of a DataFrame to the top 50 records based on descending order of revenue. This could be useful for identifying top customers, products, or regions by revenue."
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "r3GqYK6o",
+          "slug" : "by_revenue_desc",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "CUSTOMER_ID",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A unique identifier assigned to each customer in the dataset. It stores numerical values in integer data type and serves as a primary key for the customers table. This column is used to uniquely identify each customer and link their orders and other related data.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "FIRST_NAME",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The first name of each customer is stored in this column. It stores values of string data type and provides a way to identify each customer by their first name.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "LAST_NAME",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The last name of each customer is stored in this column. It contains string values and provides a way to identify customers based on their family name. This information can be useful for personalization and segmentation purposes.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "REVENUE",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "order_count",
+              "type" : "long",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "mPXLz3By",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "limit" : "50"
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.4&projectSubscriptionProjectId=12654&path=gems/Limit",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "_nm6r2-lAET8GNjXLX0Pl$$UPcumLGVTU0S1bk1lPvoE" : {
+      "id" : "_nm6r2-lAET8GNjXLX0Pl$$UPcumLGVTU0S1bk1lPvoE",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "table_snow",
+        "slug" : "table_snow",
+        "x" : 980,
+        "y" : 120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "This gem writes the input DataFrame to a Snowflake table named \"top_sales\" in the \"DEMO_OUTPUT\" schema of the \"BOBW\" database. It requires authentication credentials for the Snowflake account and specifies the write mode as \"overwrite\". This could be used to persist the data for further analysis or reporting in a Snowflake environment."
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "jmJL-xXY7Y1uVlbNNGqRq$$HQNLP56cQvriRKSjJbBMl",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "CUSTOMER_ID",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A unique identifier assigned to each customer in the dataset. It stores numerical values in integer data type and serves as a primary key for the customers table. This column is used to uniquely identify each customer and link their orders and other related data.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "FIRST_NAME",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The first name of each customer is stored in this column. It stores values of string data type and provides a way to identify each customer by their first name.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "LAST_NAME",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The last name of each customer is stored in this column. It contains string values and provides a way to identify customers based on their family name. This information can be useful for personalization and segmentation purposes.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "REVENUE",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "order_count",
+              "type" : "long",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/table_snow"
+      }
+    },
+    "knVHdJW2" : {
+      "id" : "knVHdJW2",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "orders",
+        "slug" : "orders",
+        "x" : 20,
+        "y" : 220,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "This gem reads in a CSV file containing order data and creates a Spark DataFrame with the specified schema. The CSV file is located in a DBFS directory and is read in with options to handle whitespace and header information. This DataFrame can be used for further analysis and processing of order data."
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "qfvSWWEv",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/orders"
+      }
+    },
+    "l9m7QWaE" : {
+      "id" : "l9m7QWaE",
+      "component" : "Aggregate",
+      "metadata" : {
+        "label" : "revenue_by_customer",
+        "slug" : "revenue_by_customer",
+        "x" : 420,
+        "y" : 120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "This gem calculates the total revenue generated by each customer by aggregating payment data by customer. It also counts the number of orders made by each customer. This information can be used to identify high-value customers, understand customer behaviour, and personalize customer engagement."
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "wiiIccaJ",
+          "slug" : "customers_orders_join",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "CUSTOMER_ID",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A unique identifier assigned to each customer in the dataset. It stores numerical values in integer data type and serves as a primary key for the customers table. This column is used to uniquely identify each customer and link their orders and other related data.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "FIRST_NAME",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The first name of each customer is stored in this column. It stores values of string data type and provides a way to identify each customer by their first name.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "LAST_NAME",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The last name of each customer is stored in this column. It contains string values and provides a way to identify customers based on their family name. This information can be useful for personalization and segmentation purposes.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "AMOUNT",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Stores the monetary value of each order made by a customer. The values in this column are of double data type and represent the total amount spent on a particular order. This column provides insights into the purchasing behavior of customers and can be used to analyze trends in spending.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "order_id",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A unique identifier for each order. It stores integer values and provides a way to uniquely identify each order in the dataset. This column is used to track the status and details of each order placed by customers.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "fz9UnRF4",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "allIns" : false,
+        "doPivot" : false,
+        "aggregate" : [ {
+          "target" : "REVENUE",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "SUM(amount)"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "order_count",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "count(order_id)"
+          },
+          "description" : "",
+          "_row_id" : "c_13"
+        } ],
+        "allowSelection" : true,
+        "pivotColumn" : null,
+        "pivotValues" : [ ],
+        "activeTab" : "groupBy",
+        "columnsSelector" : [ "wiiIccaJ##LAST_NAME", "wiiIccaJ##CUSTOMER_ID", "wiiIccaJ##order_id", "wiiIccaJ##FIRST_NAME", "wiiIccaJ##AMOUNT" ],
+        "groupBy" : [ {
+          "target" : "CUSTOMER_ID",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CUSTOMER_ID"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "FIRST_NAME",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "FIRST_NAME"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "LAST_NAME",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "LAST_NAME"
+          },
+          "description" : "",
+          "_row_id" : null
+        } ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.4&projectSubscriptionProjectId=12654&path=gems/Aggregate",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "qE2Q061c" : {
+      "id" : "qE2Q061c",
+      "component" : "OrderBy",
+      "metadata" : {
+        "label" : "by_revenue_desc",
+        "slug" : "by_revenue_desc",
+        "x" : 620,
+        "y" : 120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "This gem sorts customer revenue data in descending order, allowing businesses to identify their top revenue-generating customers and tailor their marketing and engagement strategies accordingly."
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "dLKpgp56",
+          "slug" : "revenue_by_customer",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "CUSTOMER_ID",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A unique identifier assigned to each customer in the dataset. It stores numerical values in integer data type and serves as a primary key for the customers table. This column is used to uniquely identify each customer and link their orders and other related data.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "FIRST_NAME",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The first name of each customer is stored in this column. It stores values of string data type and provides a way to identify each customer by their first name.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "LAST_NAME",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The last name of each customer is stored in this column. It contains string values and provides a way to identify customers based on their family name. This information can be useful for personalization and segmentation purposes.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "REVENUE",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "order_count",
+              "type" : "long",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "a6N16Ukw",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "dLKpgp56##REVENUE" ],
+        "orders" : [ {
+          "expression" : {
+            "format" : "sql",
+            "expression" : "REVENUE"
+          },
+          "sortType" : "desc"
+        } ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.4&projectSubscriptionProjectId=12654&path=gems/OrderBy",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "DlvaFCGY" : {
+      "id" : "DlvaFCGY",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "customers_orders_join",
+        "slug" : "customers_orders_join",
+        "x" : 220,
+        "y" : 120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "This gem merges customer and order data based on the customer_id identifier for enhanced insights and decision-making. It provides a unified view of customer information and order details, enabling customer analysis, personalization, and data integration."
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "j9OMQ87r",
+          "slug" : "customers",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A unique identifier assigned to each customer in the dataset. It stores numerical values in integer data type and serves as a primary key for the customers table. This column is used to uniquely identify each customer and link their orders and other related data.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "first_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The first name of each customer is stored in this column. It stores values of string data type and provides a way to identify each customer by their first name.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "last_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The last name of each customer is stored in this column. It contains string values and provides a way to identify customers based on their family name. This information can be useful for personalization and segmentation purposes.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "phone",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Stores the phone number of each customer. The values in this column are of string data type and provide a way to contact each customer. It is recommended to format the phone numbers consistently to ensure accurate communication with customers.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "email",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Stores the email address of each customer. The values in this column are of string data type and provide a way to contact customers via email. It is a unique identifier for each customer and can be used for communication and marketing purposes.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country_code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Represents the country code of each customer's location. It stores values in string data type and provides information about the geographic location of each customer. This column can be used to analyze customer demographics and behavior based on their country of origin.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_open_date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The date on which the customer's account was opened. This column stores values in string data type and provides information about the account's creation date. It can be used to track the age of the account and analyze customer behavior over time.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_flags",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "This column stores information about the account status of each customer. It contains string values that indicate whether the account is active, inactive, or has any other special flags associated with it. This information can be used to track customer behavior and preferences.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        }, {
+          "id" : "cpUfqcwj",
+          "slug" : "orders",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "order_id",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A unique identifier for each order. It stores integer values and provides a way to uniquely identify each order in the dataset. This column is used to track the status and details of each order placed by customers.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "customer_id",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A unique identifier for each customer who has placed an order. This column stores integer values and is used to link each order to a specific customer in the Customers table.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "order_status",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Indicates the current status of an order. It stores string values that describe the current state of an order, such as 'pending', 'shipped', or 'delivered'. This column provides information on the progress of each order and can be used to track the status of orders over time.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "order_category",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Categorization of each order made by customers. It stores the type of product or service purchased by the customer. The values in this column are of string data type and provide a way to group orders based on their category.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "order_date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Stores the date on which an order was placed. The values in this column are of string data type and follow the format YYYY-MM-DD. This column provides information about the timing of orders and can be used to analyze trends in customer behavior over time.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "amount",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Stores the monetary value of each order made by a customer. The values in this column are of double data type and represent the total amount spent on a particular order. This column provides insights into the purchasing behavior of customers and can be used to analyze trends in spending.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "qsJqg0xp",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "orders",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "customers.customer_id = orders.customer_id"
+          },
+          "joinType" : "inner"
+        } ],
+        "expressions" : [ {
+          "target" : "CUSTOMER_ID",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "customers.customer_id"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "FIRST_NAME",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "customers.first_name"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "LAST_NAME",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "customers.last_name"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "AMOUNT",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "orders.amount"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "order_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "orders.order_id"
+          },
+          "description" : "",
+          "_row_id" : null
+        } ],
+        "hints" : [ {
+          "id" : "j9OMQ87r",
+          "alias" : "customers",
+          "hintType" : "none",
+          "propagateColumns" : false
+        }, {
+          "id" : "cpUfqcwj",
+          "alias" : "orders",
+          "hintType" : "none",
+          "propagateColumns" : false
+        } ],
+        "allIn1" : null,
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "cpUfqcwj##customer_id", "j9OMQ87r##customer_id", "j9OMQ87r##customer_id", "j9OMQ87r##last_name", "cpUfqcwj##amount", "j9OMQ87r##first_name", "cpUfqcwj##order_id" ],
+        "allIn0" : null,
+        "whereClause" : null,
+        "headAlias" : "customers"
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.4&projectSubscriptionProjectId=12654&path=gems/Join",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "s75mv1gA" : {
+      "id" : "s75mv1gA",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "customers",
+        "slug" : "customers",
+        "x" : 20,
+        "y" : 20,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "This gem reads in customer data from a CSV file and creates a DataFrame with the specified schema. The CSV file is located in a specific directory in the Databricks file system. This DataFrame can be used for further analysis and integration with other data sources."
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "LAWuzVhU",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/customers"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  },
+  "diagnostics" : [ {
+    "property" : "$.workflow.processes._nm6r2-lAET8GNjXLX0Pl$$UPcumLGVTU0S1bk1lPvoE.properties.textPassword",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 2,
+    "message" : "Storing plain-text passwords poses a security risk and is not recommended.",
+    "tags" : [ ],
+    "relatedInformation" : [ ],
+    "diagnosticType" : 1
+  } ]
+}
