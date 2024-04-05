@@ -1,0 +1,227 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1"
+    },
+    "codeGenConfiguration" : {
+      "editableConfig" : true,
+      "plibVersion" : {
+        "mavenVersion" : "7.1.83",
+        "pyPiVersion" : "1.8.13"
+      }
+    },
+    "id" : "1",
+    "uri" : "pipelines/a1_FilterCriteria",
+    "language" : "python",
+    "fabricId" : "9631",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "bobwprophecyioteam.helloworld.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.spark_basic.functions", "prophecy.warehouse.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "12654",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12655",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "a1_filtercriteria",
+    "configurationVersion" : "v2"
+  },
+  "connections" : [ {
+    "id" : "7aVkhZXJwDvf_LrAfWHCR$$hEAQK1jZ8vyYh4iwbpw5x",
+    "source" : "NCj8jy6UJRhpn24csdy9g$$1Sj9V0F4YI1B-k5gRgUxj",
+    "sourcePort" : "INEb0UrGW0l8MTiDfk0Ww$$V7M5Oc1d0WHWt4mXXMiqG",
+    "target" : "CiepfvnJogrzZtG7q-oZF$$sHNRYV_PfYR3h_5y7dYNs",
+    "targetPort" : "JDnr46qmJDsLLwK5NxE1M$$27EXGoh3hqoiNXQGDPX_e"
+  } ],
+  "processes" : {
+    "NCj8jy6UJRhpn24csdy9g$$1Sj9V0F4YI1B-k5gRgUxj" : {
+      "id" : "NCj8jy6UJRhpn24csdy9g$$1Sj9V0F4YI1B-k5gRgUxj",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "customers",
+        "slug" : "customers",
+        "x" : -660,
+        "y" : -180,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "INEb0UrGW0l8MTiDfk0Ww$$V7M5Oc1d0WHWt4mXXMiqG",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/customers"
+      }
+    },
+    "CiepfvnJogrzZtG7q-oZF$$sHNRYV_PfYR3h_5y7dYNs" : {
+      "id" : "CiepfvnJogrzZtG7q-oZF$$sHNRYV_PfYR3h_5y7dYNs",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "Filter_Acct_Category",
+        "slug" : "Filter_Acct_Category",
+        "x" : -480,
+        "y" : -180,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "JDnr46qmJDsLLwK5NxE1M$$27EXGoh3hqoiNXQGDPX_e",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "A unique identifier assigned to each customer in the dataset. It stores numerical values in integer data type and serves as a primary key for the customers table. This column is used to uniquely identify each customer and link their orders and other related data.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "first_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The first name of each customer is stored in this column. It stores values of string data type and provides a way to identify each customer by their first name.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "last_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The last name of each customer is stored in this column. It contains string values and provides a way to identify customers based on their family name. This information can be useful for personalization and segmentation purposes.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "phone",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Stores the phone number of each customer. The values in this column are of string data type and provide a way to contact each customer. It is recommended to format the phone numbers consistently to ensure accurate communication with customers.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "email",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Stores the email address of each customer. The values in this column are of string data type and provide a way to contact customers via email. It is a unique identifier for each customer and can be used for communication and marketing purposes.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country_code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Represents the country code of each customer's location. It stores values in string data type and provides information about the geographic location of each customer. This column can be used to analyze customer demographics and behavior based on their country of origin.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_open_date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The date on which the customer's account was opened. This column stores values in string data type and provides information about the account's creation date. It can be used to track the age of the account and analyze customer behavior over time.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_flags",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "This column stores information about the account status of each customer. It contains string values that indicate whether the account is active, inactive, or has any other special flags associated with it. This information can be used to track customer behavior and preferences.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "GoZ6vT5H7ckwk0LRnfW30$$Lxb7tR-V2OJ9FXIJoODaz",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "JDnr46qmJDsLLwK5NxE1M$$27EXGoh3hqoiNXQGDPX_e##account_flags" ],
+        "condition" : {
+          "format" : "sql",
+          "expression" : "account_flags in ('E','A')"
+        }
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.4&projectSubscriptionProjectId=12654&path=gems/Filter",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  }
+}

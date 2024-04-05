@@ -1,3 +1,18 @@
+# RBC Demo 4/2/2024
+Demonstration Capabilities
+
+1 Filter Criteria -> Specify any filter condition on the source data - a1_FilterCriteria
+2 Direct Field Mapping -> Source Field to Target Field - a2_DirectFieldMap
+3 Basic Mapping -> Source field to Target mapping based on enum list or reference dataset
+4 Conditional Mapping -> Source to Target based on certain conditions. e.g. value of single/multiple fields within the same row or based on lookup from a reference dataset-see Mortgage or FinancialCrimes
+5 List Mapping -> Repeating fields on source stored as an ARRAY in target model
+6 Maps Mapping -> Repeating key value pairs on source filtered based certain keys and mapped to a STRUCT in target model
+7 User Defined Functions -> Define udf’s and use those in the transformation logic
+8 Broadcast -> Ability to broadcast small entities and use those for joins/lookups during transformation.
+9 Multiple Target models -> Source Dataset transformed to single /multiple target datasets based on certain fields in the source. e.g. based on product type, transformation will choose the target dataset. Target can be more than one.-see Mortgage or FinancialCrimes
+10 Self joins -> Ability to lookup / join across rows within the same dataset to apply enrichment/transformation rules
+
+
 # Hello World Project with Prophecy using Python
 
 This Project is a gentle introduction to Data Engineering in Python. Using an innovative drag-and-drop interface, users can ingest, clean, transform their data in re-usable Pipelines. The visual design interface allows users to conceptualize their Pipelines, and then Prophecy turns those visual designs into high-quality Python code. (Prophecy also supports Scala and SQL code). The code is committed to the user's git repository, and is therefore available to the user for versioning, deployment, and all the best software engineering practices. Prophecy is an end-to-end data engineering platform, so it covers committing, releases, testing, CI/CD, job scheduling, etc. Also, Prophecy integrates with most external processes in case you already have some or all of these items in place. Add your standard Pipelines to Prophecy and expand the number of business use cases your team can solve. Let Prophecy help organize your codebase and boost your productivity today!

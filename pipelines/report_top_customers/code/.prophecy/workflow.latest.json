@@ -3,6 +3,13 @@
     "migrationVersions" : {
       "gemBuilderVersion" : "v1"
     },
+    "codeGenConfiguration" : {
+      "editableConfig" : false,
+      "plibVersion" : {
+        "mavenVersion" : "7.1.83",
+        "pyPiVersion" : "1.8.13"
+      }
+    },
     "id" : "1",
     "uri" : "pipelines/report_top_customers",
     "language" : "python",
@@ -56,7 +63,7 @@
       "enabled" : false,
       "value" : 1000
     },
-    "configurationVersion" : "v1"
+    "configurationVersion" : "v2"
   },
   "connections" : [ {
     "id" : "939",

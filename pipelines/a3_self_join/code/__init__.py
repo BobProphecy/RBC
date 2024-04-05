@@ -1,0 +1,1 @@
+from .a3_self_join import *

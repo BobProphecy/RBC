@@ -96,6 +96,48 @@ pipelines:
       - datasets/table_snow
     subgraphs: []
     dependencies: {}
+  pipelines/a1_FilterCriteria:
+    name: a1_FilterCriteria
+    description: ''
+    author: bobw@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-03-29 13:27:20'
+    datasets:
+      inputs:
+      - datasets/customers
+      outputs: []
+    subgraphs: []
+    dependencies: {}
+  pipelines/a2_DirectFieldMap:
+    name: a2_DirectFieldMap
+    description: ''
+    author: bobw@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-03-29 13:31:45'
+    datasets:
+      inputs:
+      - datasets/customers
+      outputs:
+      - datasets/rbc_cust_target
+    subgraphs: []
+    dependencies: {}
+  pipelines/a3_self_join:
+    name: a3_self_join
+    description: ''
+    author: bobw@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-04-05 15:08:03'
+    datasets:
+      inputs: []
+      outputs: []
+    subgraphs: []
+    dependencies: {}
 datasets:
   datasets/report:
     name: report
@@ -240,6 +282,32 @@ datasets:
         description: ''
         author: bobw@prophecy.io
         createdAt: '2024-03-15 14:36:03'
+  datasets/rbc_cust_target:
+    name: rbc_cust_target
+    description: ''
+    author: bobw@prophecy.io
+    createdAt: '2024-03-29 13:40:01'
+    mode: batch
+    physicalDatasets:
+      Databricks-Prophecy:
+        fabricId: 9631
+        datasetType: Warehouse
+        description: ''
+        author: bobw@prophecy.io
+        createdAt: '2024-03-29 13:40:01'
+  datasets/simple_map:
+    name: simple_map
+    description: ''
+    author: bobw@prophecy.io
+    createdAt: '2024-03-29 14:25:59'
+    mode: batch
+    physicalDatasets:
+      Databricks-Prophecy:
+        fabricId: 9631
+        datasetType: File
+        description: ''
+        author: bobw@prophecy.io
+        createdAt: '2024-03-29 14:25:59'
 templates: {}
 jobs:
   jobs/run_1:
@@ -309,7 +377,19 @@ sqlSeeds: {}
 sqlSources: {}
 sqlUnreferencedSources: {}
 sqlPipeline: null
-dependencies: []
+dependencies:
+- type: plibMaven
+  modifiedAt: '2024-04-05T15:07:10.011714Z'
+  name: plibMaven
+  version: 7.1.83
+  id: '541171390'
+  createdAt: '2024-04-05T15:07:10.011626Z'
+- type: plibPypi
+  modifiedAt: '2024-04-05T15:07:10.011783Z'
+  name: plibPypi
+  version: 1.8.13
+  id: '2123059912'
+  createdAt: '2024-04-05T15:07:10.011764Z'
 projectDependencies:
   '12655':
     projectUID: 12655
