@@ -12,7 +12,7 @@ def Target_customers(spark: SparkSession, in0: DataFrame):
                  .options(**{
         "sfUrl": "https://tu22760.ap-south-1.aws.snowflakecomputing.com/",
         "sfUser": "DEMOACCOUNT",
-        "sfPassword": "jck5yjn5bpf9uzx*DMJ",
+        "sfPassword": "DEMOACCOUNT",
         "sfDatabase": "BOBW",
         "sfSchema": "DEMO_OUTPUT",
         "sfWarehouse": "",

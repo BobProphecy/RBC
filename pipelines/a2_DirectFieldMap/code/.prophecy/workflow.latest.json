@@ -214,7 +214,7 @@
     "autoUpdateOnRun" : false
   },
   "diagnostics" : [ {
-    "property" : "$.workflow.processes._GcLKnM-rXR0H7Vx5ov72$$NCxIKp79dgoLbqWTFLirR.properties.textPassword",
+    "property" : "$.workflow.processes._GcLKnM-rXR0H7Vx5ov72$$NCxIKp79dgoLbqWTFLirR.properties.secretPassword",
     "range" : {
       "start" : {
         "line" : 0,
@@ -225,8 +225,8 @@
         "character" : 0
       }
     },
-    "severity" : 2,
-    "message" : "Storing plain-text passwords poses a security risk and is not recommended.",
+    "severity" : 1,
+    "message" : "Storing plain-text passwords poses a security risk and is not recommended. Please see https://docs.prophecy.io/low-code-spark/best-practices/use-dbx-secrets for suggested alternatives",
     "tags" : [ ],
     "relatedInformation" : [ ],
     "diagnosticType" : 1
