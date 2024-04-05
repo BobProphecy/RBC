@@ -137,6 +137,79 @@
           "selectedInstance" : "default"
         }
       }
+    },
+    "0fAzVKrcxbdpJCbBlSDRr$$nz3HsALIk3lihkgeKD4x4" : {
+      "id" : "0fAzVKrcxbdpJCbBlSDRr$$nz3HsALIk3lihkgeKD4x4",
+      "component" : "DBT",
+      "metadata" : {
+        "label" : "DBT_1",
+        "slug" : "DBT_1",
+        "x" : -480,
+        "y" : -100
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "pdZFyVJe-9D5T3QK6fplO$$CXUBpHRL-zdmeuNgvi3fZ",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "OLe1vw-oYs1gN46fXIQrz$$mm2I7I15R5c0vq6TLcbtG",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "execSeed" : true,
+        "execRun" : true,
+        "gitEntity" : "branch",
+        "projectId" : "21686",
+        "runOnlyModel" : "false",
+        "loadingModels" : false,
+        "profile" : "run_profile",
+        "sqlFabricId" : "9769",
+        "gitEntityValue" : "main",
+        "execDeps" : true,
+        "execTest" : true,
+        "currentProjectModels" : [ {
+          "label" : "customer_orders",
+          "value" : "customer_orders",
+          "id" : "21686/.prophecy/metadata/sqlmodels/customer_orders",
+          "name" : "customer_orders"
+        }, {
+          "label" : "stg_customers",
+          "value" : "stg_customers",
+          "id" : "21686/.prophecy/metadata/sqlmodels/stg_customers",
+          "name" : "stg_customers"
+        }, {
+          "label" : "stg_payments",
+          "value" : "stg_payments",
+          "id" : "21686/.prophecy/metadata/sqlmodels/stg_payments",
+          "name" : "stg_payments"
+        }, {
+          "label" : "customers",
+          "value" : "customers",
+          "id" : "21686/.prophecy/metadata/sqlmodels/customers",
+          "name" : "customers"
+        }, {
+          "label" : "orders",
+          "value" : "orders",
+          "id" : "21686/.prophecy/metadata/sqlmodels/orders",
+          "name" : "orders"
+        }, {
+          "label" : "stg_orders",
+          "value" : "stg_orders",
+          "id" : "21686/.prophecy/metadata/sqlmodels/stg_orders",
+          "name" : "stg_orders"
+        } ]
+      }
     }
   },
   "connections" : [ {
@@ -145,5 +218,11 @@
     "target" : "heKF0CvYzYFYbqYYOAM2Z$$S9tuDPgDmxxnasneraxzn",
     "sourcePort" : "nlQzVhP_yOmHv1q8VvXGi$$-S_z0pNMXxTiDHq59wqWJ",
     "targetPort" : "SF0TN4hyOwVLoScrrCjvt$$9jT6N7q1quiUNtuGe2auE"
+  }, {
+    "id" : "xN9_Dxut5nfQoIQKERkP1$$2dWPFkKJmnCTTQ--3MmnB",
+    "source" : "0fAzVKrcxbdpJCbBlSDRr$$nz3HsALIk3lihkgeKD4x4",
+    "target" : "UtG15jxl01uZjz45s2e2I$$ut4uDvFYIil9dWuOiKrZ0",
+    "sourcePort" : "OLe1vw-oYs1gN46fXIQrz$$mm2I7I15R5c0vq6TLcbtG",
+    "targetPort" : "WwnlcN_PRbo-z2SNVKOYo$$oYwCT2ZZaflXW9axwoPXQ"
   } ]
 }
