@@ -10,7 +10,7 @@ Demonstration Capabilities
 7 User Defined Functions -> Define udf’s and use those in the transformation logic
 8 Broadcast -> Ability to broadcast small entities and use those for joins/lookups during transformation.
 9 Multiple Target models -> Source Dataset transformed to single /multiple target datasets based on certain fields in the source. e.g. based on product type, transformation will choose the target dataset. Target can be more than one.-see Mortgage or FinancialCrimes
-10 Self joins -> Ability to lookup / join across rows within the same dataset to apply enrichment/transformation rules
+10 Self joins -> Ability to lookup / join across rows within the same dataset to apply enrichment/transformation rules - a3_self_join
 
 
 # Hello World Project with Prophecy using Python

@@ -4,9 +4,12 @@ from pyspark.sql.types import *
 from a3_self_join.config.ConfigStore import *
 from a3_self_join.udfs.UDFs import *
 from prophecy.utils import *
+from a3_self_join.graph import *
 
 def pipeline(spark: SparkSession) -> None:
-    pass
+    df_stooges = stooges(spark)
+    df_mgr_stooges = mgr_stooges(spark)
+    df_employees_with_managers = employees_with_managers(spark, df_stooges, df_mgr_stooges)
 
 def main():
     spark = SparkSession.builder\

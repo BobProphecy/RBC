@@ -70,8 +70,293 @@
     "topLevelPackage" : "a3_self_join",
     "configurationVersion" : "v2"
   },
-  "connections" : [ ],
-  "processes" : { },
+  "connections" : [ {
+    "id" : "JkEDByuTcd1T6lg6j3MuB$$iRmRk8ffb_R-d9T1SVq65",
+    "source" : "ctr8yPE9eF_-QjXlDv6dg$$Dm6D-BpIwxgcoDgmolnKn",
+    "sourcePort" : "dZntivkVBD5LPNpeCgsPq$$XTg0u7RiEfXYFTuVuSWQz",
+    "target" : "Za7h5OhERU41Z7_zJECF2$$R1s7JTfMxJ_T4-07IgQ8X",
+    "targetPort" : "RlFrbBTKfJj6Qy_uKbL67$$TuTR_vwiEYCPDqmJjgulW"
+  }, {
+    "id" : "1GgwYiffdwPzFhaFN5L9u$$_G0zeZMVHnjjlBdLD34ty",
+    "source" : "KOZPpvaZoivlBvDx87zD0$$R5KqT1U0Qiv-TZ-3OqiHP",
+    "sourcePort" : "ththLOP5CwKN_W6s7smJt$$fro7oFTr1QrSlZY5jNauq",
+    "target" : "Za7h5OhERU41Z7_zJECF2$$R1s7JTfMxJ_T4-07IgQ8X",
+    "targetPort" : "TaBdEe0KUCCejOM70P6SF$$kBSnVZHT1Ap1bPq86qTHY"
+  } ],
+  "processes" : {
+    "ctr8yPE9eF_-QjXlDv6dg$$Dm6D-BpIwxgcoDgmolnKn" : {
+      "id" : "ctr8yPE9eF_-QjXlDv6dg$$Dm6D-BpIwxgcoDgmolnKn",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "stooges",
+        "slug" : "stooges",
+        "x" : -540,
+        "y" : -220,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "dZntivkVBD5LPNpeCgsPq$$XTg0u7RiEfXYFTuVuSWQz",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/emp_stooges"
+      }
+    },
+    "KOZPpvaZoivlBvDx87zD0$$R5KqT1U0Qiv-TZ-3OqiHP" : {
+      "id" : "KOZPpvaZoivlBvDx87zD0$$R5KqT1U0Qiv-TZ-3OqiHP",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "mgr_stooges",
+        "slug" : "mgr_stooges",
+        "x" : -540,
+        "y" : -40,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "ththLOP5CwKN_W6s7smJt$$fro7oFTr1QrSlZY5jNauq",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/emp_stooges"
+      }
+    },
+    "Za7h5OhERU41Z7_zJECF2$$R1s7JTfMxJ_T4-07IgQ8X" : {
+      "id" : "Za7h5OhERU41Z7_zJECF2$$R1s7JTfMxJ_T4-07IgQ8X",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "employees_with_managers",
+        "slug" : "employees_with_managers",
+        "x" : -360,
+        "y" : -140,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "RlFrbBTKfJj6Qy_uKbL67$$TuTR_vwiEYCPDqmJjgulW",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "employee_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "f_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "l_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "title",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "manager_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        }, {
+          "id" : "TaBdEe0KUCCejOM70P6SF$$kBSnVZHT1Ap1bPq86qTHY",
+          "slug" : "in1",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "employee_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "f_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "l_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "title",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "manager_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "8W8EJkbIeiUklhnrhwd-U$$jsygR0RrQCr4NA7nQ9G_I",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "in1",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.manager_id=in1.employee_id"
+          },
+          "joinType" : "left_outer"
+        } ],
+        "expressions" : [ {
+          "target" : "employee_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.employee_id"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "f_name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.f_name"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "l_name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.l_name"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "title",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.title"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "manager_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.manager_id"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "mgr_f_name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.f_name"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "mgr_l_name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.l_name"
+          },
+          "description" : "",
+          "_row_id" : null
+        } ],
+        "hints" : [ {
+          "id" : "RlFrbBTKfJj6Qy_uKbL67$$TuTR_vwiEYCPDqmJjgulW",
+          "alias" : "in0",
+          "hintType" : "none",
+          "propagateColumns" : false
+        }, {
+          "id" : "TaBdEe0KUCCejOM70P6SF$$kBSnVZHT1Ap1bPq86qTHY",
+          "alias" : "in1",
+          "hintType" : "none",
+          "propagateColumns" : false
+        } ],
+        "allIn1" : null,
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "RlFrbBTKfJj6Qy_uKbL67$$TuTR_vwiEYCPDqmJjgulW##manager_id", "TaBdEe0KUCCejOM70P6SF$$kBSnVZHT1Ap1bPq86qTHY##employee_id", "RlFrbBTKfJj6Qy_uKbL67$$TuTR_vwiEYCPDqmJjgulW##f_name", "RlFrbBTKfJj6Qy_uKbL67$$TuTR_vwiEYCPDqmJjgulW##title", "TaBdEe0KUCCejOM70P6SF$$kBSnVZHT1Ap1bPq86qTHY##f_name", "RlFrbBTKfJj6Qy_uKbL67$$TuTR_vwiEYCPDqmJjgulW##employee_id", "RlFrbBTKfJj6Qy_uKbL67$$TuTR_vwiEYCPDqmJjgulW##manager_id", "TaBdEe0KUCCejOM70P6SF$$kBSnVZHT1Ap1bPq86qTHY##l_name", "RlFrbBTKfJj6Qy_uKbL67$$TuTR_vwiEYCPDqmJjgulW##l_name" ],
+        "allIn0" : null,
+        "whereClause" : null,
+        "headAlias" : "in0"
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.4&projectSubscriptionProjectId=12654&path=gems/Join",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    }
+  },
   "ports" : {
     "inputs" : [ ],
     "outputs" : [ ],

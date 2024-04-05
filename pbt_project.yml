@@ -134,7 +134,8 @@ pipelines:
     language: python
     createdAt: '2024-04-05 15:08:03'
     datasets:
-      inputs: []
+      inputs:
+      - datasets/emp_stooges
       outputs: []
     subgraphs: []
     dependencies: {}
@@ -308,6 +309,19 @@ datasets:
         description: ''
         author: bobw@prophecy.io
         createdAt: '2024-03-29 14:25:59'
+  datasets/emp_stooges:
+    name: emp_stooges
+    description: ''
+    author: bobw@prophecy.io
+    createdAt: '2024-04-05 15:29:50'
+    mode: batch
+    physicalDatasets:
+      Databricks-Prophecy:
+        fabricId: 9631
+        datasetType: File
+        description: ''
+        author: bobw@prophecy.io
+        createdAt: '2024-04-05 15:29:50'
 templates: {}
 jobs:
   jobs/run_1:
