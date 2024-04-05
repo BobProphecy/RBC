@@ -10,6 +10,8 @@ def pipeline(spark: SparkSession) -> None:
     df_stooges = stooges(spark)
     df_mgr_stooges = mgr_stooges(spark)
     df_employees_with_managers = employees_with_managers(spark, df_stooges, df_mgr_stooges)
+    df_managers = managers(spark, df_employees_with_managers)
+    df_non_managers = non_managers(spark, df_employees_with_managers)
 
 def main():
     spark = SparkSession.builder\

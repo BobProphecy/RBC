@@ -1,9 +1,9 @@
-# RBC Demo 4/2/2024
+# RBC Demo 4/10/2024
 Demonstration Capabilities
 
 1 Filter Criteria -> Specify any filter condition on the source data - a1_FilterCriteria
 2 Direct Field Mapping -> Source Field to Target Field - a2_DirectFieldMap
-3 Basic Mapping -> Source field to Target mapping based on enum list or reference dataset
+3 Basic Mapping -> Source field to Target mapping based on enum list or reference dataset - a3_self_join
 4 Conditional Mapping -> Source to Target based on certain conditions. e.g. value of single/multiple fields within the same row or based on lookup from a reference dataset-see Mortgage or FinancialCrimes
 5 List Mapping -> Repeating fields on source stored as an ARRAY in target model
 6 Maps Mapping -> Repeating key value pairs on source filtered based certain keys and mapped to a STRUCT in target model

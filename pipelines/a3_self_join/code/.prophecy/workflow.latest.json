@@ -82,8 +82,126 @@
     "sourcePort" : "ththLOP5CwKN_W6s7smJt$$fro7oFTr1QrSlZY5jNauq",
     "target" : "Za7h5OhERU41Z7_zJECF2$$R1s7JTfMxJ_T4-07IgQ8X",
     "targetPort" : "TaBdEe0KUCCejOM70P6SF$$kBSnVZHT1Ap1bPq86qTHY"
+  }, {
+    "id" : "Nm6jup64QCfZQXyoNmECv$$_qdFXgEn9as57yUJywnjp",
+    "source" : "Za7h5OhERU41Z7_zJECF2$$R1s7JTfMxJ_T4-07IgQ8X",
+    "sourcePort" : "8W8EJkbIeiUklhnrhwd-U$$jsygR0RrQCr4NA7nQ9G_I",
+    "target" : "4j593qzt2v385l8_BpokG$$fqDkVU-KfdlYC1WnhHshe",
+    "targetPort" : "YsdF5I7gEw3rYPudI633f$$ZMscyKSb2awn3bN3Y_iWe"
+  }, {
+    "id" : "jln_lZqQIOlyPew1xXQIA",
+    "source" : "Za7h5OhERU41Z7_zJECF2$$R1s7JTfMxJ_T4-07IgQ8X",
+    "sourcePort" : "8W8EJkbIeiUklhnrhwd-U$$jsygR0RrQCr4NA7nQ9G_I",
+    "target" : "I9Bb9fuxLayXKtk19rI2n$$mhQEEcyiAAFYw7HdTxPPZ",
+    "targetPort" : "vhJAAWXvSLB6P_WD0sLQF$$UvOgXVHHqZqu9wzOXN_tO"
   } ],
   "processes" : {
+    "4j593qzt2v385l8_BpokG$$fqDkVU-KfdlYC1WnhHshe" : {
+      "id" : "4j593qzt2v385l8_BpokG$$fqDkVU-KfdlYC1WnhHshe",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "managers",
+        "slug" : "managers",
+        "x" : -160,
+        "y" : -240,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "YsdF5I7gEw3rYPudI633f$$ZMscyKSb2awn3bN3Y_iWe",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "employee_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "f_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "l_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "title",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "manager_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "mgr_f_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "mgr_l_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "AVFy3wgBcPEfOQu0p1AWX$$hct_OKZCM5IOnuium2I0i",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "YsdF5I7gEw3rYPudI633f$$ZMscyKSb2awn3bN3Y_iWe##title" ],
+        "condition" : {
+          "format" : "sql",
+          "expression" : "title NOT IN(\"Associate\")"
+        }
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.5&projectSubscriptionProjectId=12654&path=gems/Filter",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
     "ctr8yPE9eF_-QjXlDv6dg$$Dm6D-BpIwxgcoDgmolnKn" : {
       "id" : "ctr8yPE9eF_-QjXlDv6dg$$Dm6D-BpIwxgcoDgmolnKn",
       "component" : "Source",
@@ -91,7 +209,7 @@
         "label" : "stooges",
         "slug" : "stooges",
         "x" : -540,
-        "y" : -220,
+        "y" : -240,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -101,33 +219,6 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "dZntivkVBD5LPNpeCgsPq$$XTg0u7RiEfXYFTuVuSWQz",
-          "slug" : "out"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      },
-      "properties" : {
-        "datasetId" : "datasets/emp_stooges"
-      }
-    },
-    "KOZPpvaZoivlBvDx87zD0$$R5KqT1U0Qiv-TZ-3OqiHP" : {
-      "id" : "KOZPpvaZoivlBvDx87zD0$$R5KqT1U0Qiv-TZ-3OqiHP",
-      "component" : "Source",
-      "metadata" : {
-        "label" : "mgr_stooges",
-        "slug" : "mgr_stooges",
-        "x" : -540,
-        "y" : -40,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "ththLOP5CwKN_W6s7smJt$$fro7oFTr1QrSlZY5jNauq",
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
@@ -352,8 +443,141 @@
         "headAlias" : "in0"
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.4&projectSubscriptionProjectId=12654&path=gems/Join",
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.5&projectSubscriptionProjectId=12654&path=gems/Join",
         "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "I9Bb9fuxLayXKtk19rI2n$$mhQEEcyiAAFYw7HdTxPPZ" : {
+      "id" : "I9Bb9fuxLayXKtk19rI2n$$mhQEEcyiAAFYw7HdTxPPZ",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "non_managers",
+        "slug" : "non_managers",
+        "x" : -160,
+        "y" : -60,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "vhJAAWXvSLB6P_WD0sLQF$$UvOgXVHHqZqu9wzOXN_tO",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "employee_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "f_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "l_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "title",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "manager_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "mgr_f_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "mgr_l_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "WHhXl3qHKDpXo2ysyijGb$$dPlVMMivDjl_vq_tHvC-p",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "vhJAAWXvSLB6P_WD0sLQF$$UvOgXVHHqZqu9wzOXN_tO##title" ],
+        "condition" : {
+          "format" : "sql",
+          "expression" : "title IN(\"Associate\")"
+        }
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.5&projectSubscriptionProjectId=12654&path=gems/Filter",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "KOZPpvaZoivlBvDx87zD0$$R5KqT1U0Qiv-TZ-3OqiHP" : {
+      "id" : "KOZPpvaZoivlBvDx87zD0$$R5KqT1U0Qiv-TZ-3OqiHP",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "mgr_stooges",
+        "slug" : "mgr_stooges",
+        "x" : -540,
+        "y" : -40,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "ththLOP5CwKN_W6s7smJt$$fro7oFTr1QrSlZY5jNauq",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/emp_stooges"
       }
     }
   },

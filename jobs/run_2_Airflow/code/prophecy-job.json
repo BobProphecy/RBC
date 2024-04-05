@@ -1,7 +1,7 @@
 {
   "metainfo" : {
     "type" : "Prophecy",
-    "fabricId" : "9770",
+    "fabricId" : "10625",
     "jobId" : "jobs/run_2_Airflow",
     "name" : "run_2_Airflow",
     "dagName" : "gYwxvB9DTbTjQwMwd49ceA_",

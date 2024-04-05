@@ -352,7 +352,7 @@ jobs:
   jobs/run_2_Airflow:
     name: run_2_Airflow
     description: Airflow
-    fabricUID: 9770
+    fabricUID: 10625
     scheduler:
       Prophecy: {}
     cloudProvider: null
@@ -367,9 +367,9 @@ jobs:
     pipelines: []
     jobClusterMode:
       clusterMode:
-        Single: {}
+        Multi: {}
       clusterId: null
-    enabled: null
+    enabled: false
     createdAt: '2024-03-05 16:31:39'
     author: bobw@prophecy.io
 gemContainer:
