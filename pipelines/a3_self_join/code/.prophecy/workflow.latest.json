@@ -102,8 +102,8 @@
       "metadata" : {
         "label" : "managers",
         "slug" : "managers",
-        "x" : -160,
-        "y" : -240,
+        "x" : -240,
+        "y" : -360,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -208,8 +208,8 @@
       "metadata" : {
         "label" : "stooges",
         "slug" : "stooges",
-        "x" : -540,
-        "y" : -240,
+        "x" : -720,
+        "y" : -300,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -235,8 +235,8 @@
       "metadata" : {
         "label" : "employees_with_managers",
         "slug" : "employees_with_managers",
-        "x" : -360,
-        "y" : -140,
+        "x" : -500,
+        "y" : -280,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -437,7 +437,7 @@
         } ],
         "allIn1" : null,
         "activeTab" : "expressions",
-        "columnsSelector" : [ "RlFrbBTKfJj6Qy_uKbL67$$TuTR_vwiEYCPDqmJjgulW##manager_id", "TaBdEe0KUCCejOM70P6SF$$kBSnVZHT1Ap1bPq86qTHY##employee_id", "RlFrbBTKfJj6Qy_uKbL67$$TuTR_vwiEYCPDqmJjgulW##f_name", "RlFrbBTKfJj6Qy_uKbL67$$TuTR_vwiEYCPDqmJjgulW##title", "TaBdEe0KUCCejOM70P6SF$$kBSnVZHT1Ap1bPq86qTHY##f_name", "RlFrbBTKfJj6Qy_uKbL67$$TuTR_vwiEYCPDqmJjgulW##employee_id", "RlFrbBTKfJj6Qy_uKbL67$$TuTR_vwiEYCPDqmJjgulW##manager_id", "TaBdEe0KUCCejOM70P6SF$$kBSnVZHT1Ap1bPq86qTHY##l_name", "RlFrbBTKfJj6Qy_uKbL67$$TuTR_vwiEYCPDqmJjgulW##l_name" ],
+        "columnsSelector" : [ "TaBdEe0KUCCejOM70P6SF$$kBSnVZHT1Ap1bPq86qTHY##employee_id", "RlFrbBTKfJj6Qy_uKbL67$$TuTR_vwiEYCPDqmJjgulW##manager_id", "TaBdEe0KUCCejOM70P6SF$$kBSnVZHT1Ap1bPq86qTHY##l_name", "TaBdEe0KUCCejOM70P6SF$$kBSnVZHT1Ap1bPq86qTHY##f_name", "RlFrbBTKfJj6Qy_uKbL67$$TuTR_vwiEYCPDqmJjgulW##employee_id", "RlFrbBTKfJj6Qy_uKbL67$$TuTR_vwiEYCPDqmJjgulW##title", "RlFrbBTKfJj6Qy_uKbL67$$TuTR_vwiEYCPDqmJjgulW##manager_id", "RlFrbBTKfJj6Qy_uKbL67$$TuTR_vwiEYCPDqmJjgulW##f_name", "RlFrbBTKfJj6Qy_uKbL67$$TuTR_vwiEYCPDqmJjgulW##l_name" ],
         "allIn0" : null,
         "whereClause" : null,
         "headAlias" : "in0"
@@ -453,8 +453,8 @@
       "metadata" : {
         "label" : "non_managers",
         "slug" : "non_managers",
-        "x" : -160,
-        "y" : -60,
+        "x" : -240,
+        "y" : -180,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -559,8 +559,8 @@
       "metadata" : {
         "label" : "mgr_stooges",
         "slug" : "mgr_stooges",
-        "x" : -540,
-        "y" : -40,
+        "x" : -660,
+        "y" : -140,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,

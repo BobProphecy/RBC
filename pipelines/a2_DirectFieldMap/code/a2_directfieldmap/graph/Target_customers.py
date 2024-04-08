@@ -15,7 +15,7 @@ def Target_customers(spark: SparkSession, in0: DataFrame):
         "sfPassword": "DEMOACCOUNT",
         "sfDatabase": "BOBW",
         "sfSchema": "DEMO_OUTPUT",
-        "sfWarehouse": "",
+        "sfWarehouse": "COMPUTE_WH",
         "sfRole": ""
                  })
     writer = writer.option("dbtable", "rbc_cust_target")
