@@ -122,7 +122,7 @@ pipelines:
       inputs:
       - datasets/customers
       outputs:
-      - datasets/rbc_cust_target
+      - datasets/tar_sales_table
     subgraphs: []
     dependencies: {}
   pipelines/a3_self_join:
@@ -322,6 +322,19 @@ datasets:
         description: ''
         author: bobw@prophecy.io
         createdAt: '2024-04-05 15:29:50'
+  datasets/tar_sales_table:
+    name: tar_sales_table
+    description: ''
+    author: bobw@prophecy.io
+    createdAt: '2024-04-08 16:44:30'
+    mode: batch
+    physicalDatasets:
+      Databricks-Prophecy:
+        fabricId: 9631
+        datasetType: Warehouse
+        description: ''
+        author: bobw@prophecy.io
+        createdAt: '2024-04-08 16:44:30'
 templates: {}
 jobs:
   jobs/run_1:
@@ -405,14 +418,6 @@ dependencies:
   id: '2123059912'
   createdAt: '2024-04-05T15:07:10.011764Z'
 projectDependencies:
-  '12655':
-    projectUID: 12655
-    projectName: ProphecyWarehousePython
-    repositoryPath: gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12655.git&subPath=
-    version: 0.0.4
-    isDefault: true
-    author: null
-    createdAt: '2024-04-08 15:54:48'
   '12654':
     projectUID: 12654
     projectName: ProphecySparkBasicsPython
@@ -421,6 +426,14 @@ projectDependencies:
     isDefault: true
     author: null
     createdAt: '2024-04-05 15:26:52'
+  '12655':
+    projectUID: 12655
+    projectName: ProphecyWarehousePython
+    repositoryPath: gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12655.git&subPath=
+    version: 0.0.3
+    isDefault: false
+    author: null
+    createdAt: '2024-04-08 16:34:58'
 flags:
-  shouldAddDefaultDependenciesIfAbsent: true
+  shouldAddDefaultDependenciesIfAbsent: false
 pipelineConfigurations: {}

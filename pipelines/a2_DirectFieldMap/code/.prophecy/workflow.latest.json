@@ -67,11 +67,11 @@
     "configurationVersion" : "v2"
   },
   "connections" : [ {
-    "id" : "Kxo1Gtuw8qA0F_8ujTY-j$$_oQkARRi_GN_J2_4Jks8o",
+    "id" : "o3GPcb4h6kxvvTff76iW1$$9KW0T-h23HF3-lYRAlUOc",
     "source" : "VWLpYMfv7TcfxlsOJVueQ$$FqBe7OiRCa4jCpkjEWiom",
     "sourcePort" : "YKK3reuJuFCcyVKvzwLA5$$R544cUbwT4g-p5TymDtWP",
-    "target" : "_GcLKnM-rXR0H7Vx5ov72$$NCxIKp79dgoLbqWTFLirR",
-    "targetPort" : "phkx1PpwXgpAw59L_OXeJ$$I_n_cor-YNIEdbg_flMja"
+    "target" : "75Z8McMIb29reLumdK2no$$WtDRHSyCFlF04YvjZwj4p",
+    "targetPort" : "V9tYF1NlmS8V-24YxUz25$$1ZG3xf4H_RQbOM809NZJj"
   } ],
   "processes" : {
     "VWLpYMfv7TcfxlsOJVueQ$$FqBe7OiRCa4jCpkjEWiom" : {
@@ -101,13 +101,13 @@
         "datasetId" : "datasets/customers"
       }
     },
-    "_GcLKnM-rXR0H7Vx5ov72$$NCxIKp79dgoLbqWTFLirR" : {
-      "id" : "_GcLKnM-rXR0H7Vx5ov72$$NCxIKp79dgoLbqWTFLirR",
+    "75Z8McMIb29reLumdK2no$$WtDRHSyCFlF04YvjZwj4p" : {
+      "id" : "75Z8McMIb29reLumdK2no$$WtDRHSyCFlF04YvjZwj4p",
       "component" : "Target",
       "metadata" : {
-        "label" : "Target_customers",
-        "slug" : "Target_customers",
-        "x" : -300,
+        "label" : "SNOW",
+        "slug" : "SNOW",
+        "x" : -260,
         "y" : -280,
         "phase" : 0,
         "cache" : false,
@@ -116,7 +116,7 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "phkx1PpwXgpAw59L_OXeJ$$I_n_cor-YNIEdbg_flMja",
+          "id" : "V9tYF1NlmS8V-24YxUz25$$1ZG3xf4H_RQbOM809NZJj",
           "slug" : "in0",
           "schema" : {
             "type" : "struct",
@@ -202,7 +202,7 @@
         "autoUpdateOnRun" : false
       },
       "properties" : {
-        "datasetId" : "datasets/rbc_cust_target"
+        "datasetId" : "datasets/tar_sales_table"
       }
     }
   },
@@ -214,7 +214,7 @@
     "autoUpdateOnRun" : false
   },
   "diagnostics" : [ {
-    "property" : "$.workflow.processes._GcLKnM-rXR0H7Vx5ov72$$NCxIKp79dgoLbqWTFLirR.properties.secretPassword",
+    "property" : "$.workflow.processes.75Z8McMIb29reLumdK2no$$WtDRHSyCFlF04YvjZwj4p.properties.textPassword",
     "range" : {
       "start" : {
         "line" : 0,
@@ -225,8 +225,8 @@
         "character" : 0
       }
     },
-    "severity" : 1,
-    "message" : "Storing plain-text passwords poses a security risk and is not recommended. Please see https://docs.prophecy.io/low-code-spark/best-practices/use-dbx-secrets for suggested alternatives",
+    "severity" : 2,
+    "message" : "Storing plain-text passwords poses a security risk and is not recommended.",
     "tags" : [ ],
     "relatedInformation" : [ ],
     "diagnosticType" : 1

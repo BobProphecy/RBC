@@ -8,7 +8,7 @@ from a2_directfieldmap.graph import *
 
 def pipeline(spark: SparkSession) -> None:
     df_customers = customers(spark)
-    Target_customers(spark, df_customers)
+    SNOW(spark, df_customers)
 
 def main():
     spark = SparkSession.builder\
