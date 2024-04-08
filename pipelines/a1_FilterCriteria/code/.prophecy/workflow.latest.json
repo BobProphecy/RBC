@@ -176,7 +176,7 @@
               }
             }, {
               "name" : "account_open_date",
-              "type" : "string",
+              "type" : "date",
               "nullable" : true,
               "metadata" : {
                 "description" : "The date on which the customer's account was opened. This column stores values in string data type and provides information about the account's creation date. It can be used to track the age of the account and analyze customer behavior over time.",

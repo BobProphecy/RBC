@@ -81,16 +81,3 @@ schema:
         can be used to track customer behavior and preferences.
       mappings: []
       tags: []
-expectation:
-  version: '1.0'
-  expectations:
-  - id: BZ8FjJWXBPQScTUswWLww
-    title: Customer id not null
-    enabled: false
-    interval: 0 0 0 * * ? *
-    expectationType: NullPercent
-    fields:
-      NullPercent:
-        table: customers
-        column: customer_id
-        threshold: 0

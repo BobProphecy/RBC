@@ -67,21 +67,21 @@
     "configurationVersion" : "v2"
   },
   "connections" : [ {
-    "id" : "o3GPcb4h6kxvvTff76iW1$$9KW0T-h23HF3-lYRAlUOc",
+    "id" : "iZxafYXB_T2ky5O8USBq2$$TKXGGs1eTEIeEZ5tx_6sJ",
     "source" : "VWLpYMfv7TcfxlsOJVueQ$$FqBe7OiRCa4jCpkjEWiom",
     "sourcePort" : "YKK3reuJuFCcyVKvzwLA5$$R544cUbwT4g-p5TymDtWP",
-    "target" : "75Z8McMIb29reLumdK2no$$WtDRHSyCFlF04YvjZwj4p",
-    "targetPort" : "V9tYF1NlmS8V-24YxUz25$$1ZG3xf4H_RQbOM809NZJj"
+    "target" : "GyG0ReD190-XVJX8S7rCL$$J84YkhBL5gogT_VN3vxeI",
+    "targetPort" : "MeWMQHoTeAFRRw-3pvL_m$$LvLsvnUwi0g-0LUQb1ODo"
   } ],
   "processes" : {
     "VWLpYMfv7TcfxlsOJVueQ$$FqBe7OiRCa4jCpkjEWiom" : {
       "id" : "VWLpYMfv7TcfxlsOJVueQ$$FqBe7OiRCa4jCpkjEWiom",
       "component" : "Source",
       "metadata" : {
-        "label" : "customers",
-        "slug" : "customers",
-        "x" : -460,
-        "y" : -280,
+        "label" : "RAW_customers",
+        "slug" : "RAW_customers",
+        "x" : -660,
+        "y" : -360,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -101,14 +101,14 @@
         "datasetId" : "datasets/customers"
       }
     },
-    "75Z8McMIb29reLumdK2no$$WtDRHSyCFlF04YvjZwj4p" : {
-      "id" : "75Z8McMIb29reLumdK2no$$WtDRHSyCFlF04YvjZwj4p",
+    "GyG0ReD190-XVJX8S7rCL$$J84YkhBL5gogT_VN3vxeI" : {
+      "id" : "GyG0ReD190-XVJX8S7rCL$$J84YkhBL5gogT_VN3vxeI",
       "component" : "Target",
       "metadata" : {
-        "label" : "SNOW",
-        "slug" : "SNOW",
-        "x" : -260,
-        "y" : -280,
+        "label" : "DBX_SQL_DW",
+        "slug" : "DBX_SQL_DW",
+        "x" : -480,
+        "y" : -360,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -116,7 +116,7 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "V9tYF1NlmS8V-24YxUz25$$1ZG3xf4H_RQbOM809NZJj",
+          "id" : "MeWMQHoTeAFRRw-3pvL_m$$LvLsvnUwi0g-0LUQb1ODo",
           "slug" : "in0",
           "schema" : {
             "type" : "struct",
@@ -176,7 +176,7 @@
               }
             }, {
               "name" : "account_open_date",
-              "type" : "string",
+              "type" : "date",
               "nullable" : true,
               "metadata" : {
                 "description" : "The date on which the customer's account was opened. This column stores values in string data type and provides information about the account's creation date. It can be used to track the age of the account and analyze customer behavior over time.",
@@ -202,7 +202,7 @@
         "autoUpdateOnRun" : false
       },
       "properties" : {
-        "datasetId" : "datasets/tar_sales_table"
+        "datasetId" : "datasets/customer_tbl"
       }
     }
   },
@@ -212,23 +212,5 @@
     "selectedInputFields" : [ ],
     "isCustomOutputSchema" : false,
     "autoUpdateOnRun" : false
-  },
-  "diagnostics" : [ {
-    "property" : "$.workflow.processes.75Z8McMIb29reLumdK2no$$WtDRHSyCFlF04YvjZwj4p.properties.textPassword",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "Storing plain-text passwords poses a security risk and is not recommended.",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  } ]
+  }
 }

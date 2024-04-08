@@ -7,8 +7,8 @@ from prophecy.utils import *
 from a2_directfieldmap.graph import *
 
 def pipeline(spark: SparkSession) -> None:
-    df_customers = customers(spark)
-    SNOW(spark, df_customers)
+    df_RAW_customers = RAW_customers(spark)
+    DBX_SQL_DW(spark, df_RAW_customers)
 
 def main():
     spark = SparkSession.builder\

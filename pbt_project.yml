@@ -122,7 +122,7 @@ pipelines:
       inputs:
       - datasets/customers
       outputs:
-      - datasets/tar_sales_table
+      - datasets/customer_tbl
     subgraphs: []
     dependencies: {}
   pipelines/a3_self_join:
@@ -335,6 +335,19 @@ datasets:
         description: ''
         author: bobw@prophecy.io
         createdAt: '2024-04-08 16:44:30'
+  datasets/customer_tbl:
+    name: customer_tbl
+    description: ''
+    author: bobw@prophecy.io
+    createdAt: '2024-04-08 17:48:21'
+    mode: batch
+    physicalDatasets:
+      Databricks-Prophecy:
+        fabricId: 9631
+        datasetType: Database
+        description: ''
+        author: bobw@prophecy.io
+        createdAt: '2024-04-08 17:48:21'
 templates: {}
 jobs:
   jobs/run_1:

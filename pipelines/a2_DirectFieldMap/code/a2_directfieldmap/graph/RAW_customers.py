@@ -6,11 +6,11 @@ from prophecy.libs import typed_lit
 from a2_directfieldmap.config.ConfigStore import *
 from a2_directfieldmap.udfs.UDFs import *
 
-def customers(spark: SparkSession) -> DataFrame:
+def RAW_customers(spark: SparkSession) -> DataFrame:
     return spark.read\
         .schema(
           StructType([
-            StructField("customer_id", IntegerType(), True), StructField("first_name", StringType(), True), StructField("last_name", StringType(), True), StructField("phone", StringType(), True), StructField("email", StringType(), True), StructField("country_code", StringType(), True), StructField("account_open_date", StringType(), True), StructField("account_flags", StringType(), True)
+            StructField("customer_id", IntegerType(), True), StructField("first_name", StringType(), True), StructField("last_name", StringType(), True), StructField("phone", StringType(), True), StructField("email", StringType(), True), StructField("country_code", StringType(), True), StructField("account_open_date", DateType(), True), StructField("account_flags", StringType(), True)
         ])
         )\
         .option("header", True)\
