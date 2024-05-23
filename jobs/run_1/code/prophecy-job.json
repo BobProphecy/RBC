@@ -33,7 +33,7 @@
       "name" : "Databricks-Prophecy",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small", "medium", "large" ]
+        "availableClusterSizes" : [ "small", "medium", "large", "job cluster-small" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
@@ -91,7 +91,7 @@
         "configurations" : {
           "schema" : [ ],
           "instances" : {
-            "RBC_Demo" : [ "default" ]
+            "RBC_Demo_BW" : [ "default" ]
           },
           "overrides" : { },
           "selectedInstance" : "default"
@@ -131,7 +131,7 @@
         "configurations" : {
           "schema" : [ ],
           "instances" : {
-            "RBC_Demo" : [ "default" ]
+            "RBC_Demo_BW" : [ "default" ]
           },
           "overrides" : { },
           "selectedInstance" : "default"
@@ -140,7 +140,7 @@
     },
     "0fAzVKrcxbdpJCbBlSDRr$$nz3HsALIk3lihkgeKD4x4" : {
       "id" : "0fAzVKrcxbdpJCbBlSDRr$$nz3HsALIk3lihkgeKD4x4",
-      "component" : "DBT",
+      "component" : "Model",
       "metadata" : {
         "label" : "DBT_1",
         "slug" : "DBT_1",

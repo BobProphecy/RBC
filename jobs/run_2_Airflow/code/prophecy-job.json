@@ -20,9 +20,9 @@
       "do_xcom_push" : true
     },
     "availableFabrics" : [ {
-      "id" : "10625",
-      "name" : "Airflow",
-      "trialStartDate" : 1711576238113
+      "id" : "12505",
+      "name" : "Airflow-Prophecy",
+      "trialStartDate" : 1715877877841
     } ],
     "endDate" : "2024-03-12",
     "catchup" : true,
@@ -38,13 +38,14 @@
     "dynamicPipelineStatus" : {
       "databricks" : false,
       "dataproc" : false,
-      "emr" : false
+      "emr" : false,
+      "onprem" : false
     }
   },
   "processes" : {
     "7wk4RrkeV5SK8pC2pEmqO$$kyn7avJ-59HZq89jGExm6" : {
       "id" : "7wk4RrkeV5SK8pC2pEmqO$$kyn7avJ-59HZq89jGExm6",
-      "component" : "Pipeline",
+      "component" : "DatabricksPipeline",
       "metadata" : {
         "label" : "customers_orders",
         "slug" : "customers_orders",
@@ -69,10 +70,13 @@
         "configurations" : {
           "schema" : [ ],
           "instances" : {
-            "HelloWorld" : [ "default" ]
+            "RBC_Demo_BW" : [ "default" ]
           },
           "overrides" : { },
-          "selectedInstance" : "default"
+          "selectedInstance" : {
+            "type" : "literal",
+            "value" : "default"
+          }
         },
         "taskId" : null,
         "pipelineId" : {
@@ -85,7 +89,7 @@
     },
     "Xy52SakL6uvkYB4GwShMG$$CnPfcG1P3EyiVT4o3th4F" : {
       "id" : "Xy52SakL6uvkYB4GwShMG$$CnPfcG1P3EyiVT4o3th4F",
-      "component" : "Pipeline",
+      "component" : "DatabricksPipeline",
       "metadata" : {
         "label" : "report_top_customers",
         "slug" : "report_top_customers",
@@ -110,10 +114,13 @@
         "configurations" : {
           "schema" : [ ],
           "instances" : {
-            "HelloWorld" : [ "default" ]
+            "RBC_Demo_BW" : [ "default" ]
           },
           "overrides" : { },
-          "selectedInstance" : "default"
+          "selectedInstance" : {
+            "type" : "literal",
+            "value" : "default"
+          }
         },
         "taskId" : null,
         "pipelineId" : {
